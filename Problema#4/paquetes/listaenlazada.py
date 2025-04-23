@@ -65,13 +65,15 @@ class LinkedList:
             print("No hay acciones para rehacer")
 
     def imprimir(self):
-        print("Historial de acciones: ")
+        print("Historial de acciones:")
 
-        temp = self.head 
-        while temp:
-            actual = "<- actual" if temp == self.current else ""
-            print(f"- {temp.data} {actual}")
-            temp = temp.next
+        nodo_actual = self.head  # Empezamos desde el primer nodo
+        while nodo_actual:
+            es_actual = ""
+            if nodo_actual == self.current:
+                es_actual = "<- actual"
+            print(f"- {nodo_actual.data} {es_actual}")
+            nodo_actual = nodo_actual.next
 
 
 
